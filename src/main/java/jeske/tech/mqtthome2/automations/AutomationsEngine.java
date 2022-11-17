@@ -44,7 +44,7 @@ public class AutomationsEngine {
 
     public final void reloadAutomations() {
         List<AutomationRule> all = service.getAll();
-        if (!all.isEmpty()) {
+        if (!activeAutomations.isEmpty()) {
             messageAdapter.removeTopic(activeAutomations.keySet().toArray(String[]::new));
         }
         activeAutomations.clear();
